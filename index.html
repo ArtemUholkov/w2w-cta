@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="cta">
+      <div class="cta_wrapper">
+        <div class="gradient1"></div>
+        <div class="gradient2"></div>
+        <div class="gradient3"></div>
+        <p class="cta_title">
+          It all starts with an inside look at your health with comprehensive bloodwork
+        </p>
+        <a href="https://ways2well.com/get-started/comprehensive-blood-work" class="cta_button">
+          <span class="cta_button_text">Get Started</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="25"
+            viewBox="0 0 24 25"
+            fill="none"
+          >
+            <rect
+              x="5"
+              y="13.4902"
+              width="2"
+              height="14"
+              rx="1"
+              transform="rotate(-90 5 13.4902)"
+              fill="#26355E"
+            />
+            <path
+              d="M11.2929 17.7831C10.9024 18.1737 10.9024 18.8068 11.2929 19.1973C11.6834 19.5879 12.3166 19.5879 12.7071 19.1973L18.7071 13.1973C19.0857 12.8188 19.0989 12.2092 18.7372 11.8145L13.2372 5.81451C12.864 5.40739 12.2314 5.37989 11.8243 5.75308C11.4172 6.12627 11.3897 6.75884 11.7628 7.16596L16.6159 12.4602L11.2929 17.7831Z"
+              fill="#26355E"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <style>
+      .cta {
+        position: relative;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        background-color: black;
+      }
+      .cta_wrapper {
+        position: relative;
+        max-width: 1420px;
+        margin: 0 auto;
+        border-radius: 24px;
+        background: var(--white, #fff);
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+      }
+      .cta_title {
+        color: #26355e;
+        font-family: Roboto, sans-serif;
+        font-size: 36px;
+        font-weight: 1000;
+        line-height: 140%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        max-width: 723px;
+        margin: 0;
+        margin-bottom: 29px;
+      }
+
+      .cta_button {
+        z-index: 102;
+        display: flex;
+        padding: 14px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        align-self: flex-end;
+        border-radius: 40px;
+        background: var(--Brand-color, #34b4f4);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .cta_button_text {
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        font-weight: 1000;
+        line-height: 120%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #26355e;
+      }
+      .cta_button svg {
+        position: relative;
+        left: 0;
+      }
+      .cta_button:hover {
+        gap: 12px;
+        background: #95d8f9;
+        transition: all 0.3s;
+      }
+      .cta_wrapper {
+        position: relative; /* Already present, ensures the gradient stays within this container */
+        max-width: 1420px;
+        margin: 0 auto;
+        border-radius: 24px;
+        background: var(--white, #fff);
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        overflow: hidden; /* Ensure the gradient doesn't overflow the wrapper */
+      }
+
+      .gradient1 {
+        position: absolute;
+        bottom: -300px; /* Start at the bottom of the .cta_wrapper */
+        left: 400px; /* Start from the left */
+        width: 500px; /* Wider gradient */
+        height: 500px;
+        background: radial-gradient(circle, #34b4f4 0%, transparent 70%);
+        opacity: 0.7;
+        filter: blur(100px); /* Increase blur for a softer look */
+        animation: moveGradientBottom 7s ease-in-out infinite alternate; /* Slower animation */
+      }
+
+      @keyframes moveGradientBottom {
+        0% {
+          transform: translate(0, 0); /* Bottom-left corner */
+        }
+        25% {
+          transform: translate(50px, -100px); /* Slightly up and to the right */
+        }
+        50% {
+          transform: translate(150px, 20px); /* Move diagonally towards the center */
+        }
+        75% {
+          transform: translate(-100px, 40px); /* Shift left and up a bit */
+        }
+        100% {
+          transform: translate(-50px, 0); /* Bottom-right corner */
+        }
+      }
+      .gradient2 {
+        position: absolute;
+        bottom: -200px;
+        left: 100px; /* Start near the first gradient */
+        width: 400px; /* Slightly smaller than gradient1 */
+        height: 400px;
+        background: radial-gradient(circle, rgba(255, 0, 184, 0.5) 0%, transparent 70%);
+        opacity: 0; /* Start fully invisible */
+        filter: blur(80px);
+        animation: moveGradient2 7s ease-in-out infinite alternate, fadeGradient 7s infinite; /* Two animations */
+      }
+
+      @keyframes moveGradient2 {
+        0% {
+          transform: translate(50px, 20px); /* Close to gradient1 */
+        }
+        50% {
+          transform: translate(120px, 40px); /* Slight movement away */
+        }
+        100% {
+          transform: translate(80px, 0px); /* Back near gradient1 */
+        }
+      }
+
+      @keyframes fadeGradient {
+        0%,
+        40% {
+          opacity: 0; /* Invisible initially */
+        }
+        50%,
+        90% {
+          opacity: 0.5; /* Fully visible for most of the time */
+        }
+        100% {
+          opacity: 0; /* Gradually fade out at the end */
+        }
+      }
+      .gradient3 {
+        position: absolute;
+        bottom: 0; /* Positioned at the bottom */
+        right: 0; /* Aligned to the right side */
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255, 0, 184, 0.5) 0%, transparent 70%);
+        opacity: 0; /* Start fully invisible */
+        filter: blur(80px);
+        animation: moveGradient3 9s ease-in-out infinite alternate, fadeGradient3 9s infinite; /* Two animations */
+      }
+
+      @keyframes fadeGradient3 {
+        0%,
+        20% {
+          opacity: 0; /* Start invisible */
+        }
+        30% {
+          opacity: 0.25; /* Begin to fade in */
+        }
+        40%,
+        85% {
+          opacity: 0.5; /* Fully visible for a longer period */
+        }
+        95% {
+          opacity: 0.25; /* Begin to fade out */
+        }
+        100% {
+          opacity: 0; /* Fully faded out */
+        }
+      }
+      @keyframes moveGradient3 {
+        0% {
+          transform: translate(0, 0); /* Start at the bottom-right corner */
+        }
+        25% {
+          transform: translate(-50px, -20px); /* Move slightly up and left */
+        }
+        50% {
+          transform: translate(-100px, 40px); /* Move diagonally closer to the center */
+        }
+        75% {
+          transform: translate(-70px, -10px); /* Move back closer to the bottom-right corner */
+        }
+        100% {
+          transform: translate(0, 0); /* Return to the original position */
+        }
+      }
+      @media (max-width: 850px) {
+        .cta_title {
+          font-size: 24px;
+          max-width: 291px;
+          margin-bottom: 64px;
+        }
+        .cta_button {
+          width: 279px;
+          align-self: center;
+        }
+        .gradient3 {
+          display: none;
+        }
+        .gradient1 {
+          top: 0;
+          right: 100px;
+          height: 300px;
+          width: 300px;
+        }
+        .gradient2 {
+          bottom: -100px;
+          left: 0;
+        }
+      }
+    </style>
+  </body>
+</html>
